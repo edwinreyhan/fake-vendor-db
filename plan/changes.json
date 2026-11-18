@@ -1,0 +1,30 @@
+[
+  {
+    "id": "c001",
+    "not_before": "2026-11-19T02:34:00+08:00",
+    "migration": "0002_add_note.sql",
+    "kind": "harmless",
+    "truth": "adds a nullable column note; nothing should break"
+  },
+  {
+    "id": "c002",
+    "not_before": "2026-11-19T16:40:00+08:00",
+    "migration": "0003_rename_price_to_amount.sql",
+    "kind": "breaking",
+    "truth": "column price renamed to amount; SELECT price fails"
+  },
+  {
+    "id": "c003",
+    "not_before": "2026-11-26T09:15:00+08:00",
+    "migration": "0004_amount_dollars_to_cents.sql",
+    "kind": "silent",
+    "truth": "amount changes from dollars to cents; values become 100 times bigger, schema unchanged"
+  },
+  {
+    "id": "c004",
+    "not_before": "2026-12-03T14:20:00+08:00",
+    "migration": "0005_drop_note.sql",
+    "kind": "breaking-if-used",
+    "truth": "column note is dropped; anything that selects note fails"
+  }
+]
