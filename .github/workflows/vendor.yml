@@ -1,3 +1,4 @@
+# Schedule note: GitHub showed no scheduled runs for 65 minutes after this repository was created, so this comment was added to re-register the cron (2026-11-19).
 name: vendor
 on:
   schedule:
